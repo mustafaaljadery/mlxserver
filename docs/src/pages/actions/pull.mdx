@@ -1,0 +1,19 @@
+# Pull
+
+Download & store a model from huggingface locally.
+
+## Usage
+
+```python copy
+server.pull(model="mlx-community/mistral-7B-v0.1")
+```
+
+## Example
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+
+server.pull("mlx-community/mistral-7B-v0.1")
+```

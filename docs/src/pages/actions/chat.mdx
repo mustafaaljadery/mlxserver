@@ -1,0 +1,33 @@
+# Chat
+
+Chat completion endpoint to chat with a model.
+
+## Usage
+
+```python copy
+server.chat(messages=[
+    {
+        'role': 'user',
+        'content': 'Write me a poem about the ocean.'
+    }
+])
+```
+
+## Example
+
+```python
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+
+response = server.chat(messages=[
+    {
+        'role': 'user',
+        'content': 'Write me a poem about the ocean.'
+    }
+])
+
+print(response['message']['content'])
+```
+
+## Parameters
