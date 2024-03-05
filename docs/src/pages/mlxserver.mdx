@@ -1,3 +1,19 @@
 # MLXServer
 
-This is the entry point
+This is the entry point of an `mlx-server` application. It loads a model to memory and starts the server to start accepting HTTP requests.
+
+## Usage
+
+Note: make sure you have the memory requirements to run the model. We will add more logging for this in the future.
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
+
+## Parameters
+
+**model** (required) - The model to load and run the server to to call. Check out [mlx-community]() for models.
+
+**port**- The port to run the server on. Default:`4431` (this is just some random port, lol)

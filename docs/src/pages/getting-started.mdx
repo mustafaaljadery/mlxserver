@@ -14,6 +14,25 @@ To install from PyPI you must meet the following requirements:
 - Using a native Python >= 3.8
 - macOS >= 13.3
 
+## Usage
+
+The following is an example of using `Mistral 7B Instruct` for generating text:
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+
+response = server.chat(messages=[
+    {
+        'role': 'user',
+        'content': 'Write me a poem about the ocean.'
+    }
+])
+
+print(response['message']['content'])
+```
+
 ## Note
 
 This library only runs on Apple Metal. The MLX library focuses on Apple Metal acceleration.
