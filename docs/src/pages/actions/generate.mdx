@@ -15,14 +15,13 @@ from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
 
-response = server.chat(messages=[
-    {
-        'role': 'user',
-        'content': 'Write me a poem about the ocean.'
-    }
-])
+response = server.chat(prompt="")
 
 print(response['message']['content'])
 ```
 
 ## Parameters
+
+**propmt** (required) - The prompt you want to generate with.
+
+**stream** - Stream the output. Default: False.
