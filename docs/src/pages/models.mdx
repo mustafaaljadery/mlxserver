@@ -1,0 +1,40 @@
+# Models
+
+To view all of the models, check out `mlx-lm` on Huggingface. Our MLX server uses all of the models supported by the mlx-community.
+
+## Popular Models
+
+Here's a list of some of the most popular models and their usage:
+
+#### Mistral 7B
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
+
+#### Mixtral
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/Mixtral-8x7B-Instruct-v0.1")
+```
+
+#### Gemma
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="mlx-community/quantized-gemma-7b-it")
+```
+
+#### CodeLlama
+
+```python copy
+from mlx_server import MLXServer
+
+
+server = MLXServer(model="mlx-community/CodeLlama-7b-mlx")
+```

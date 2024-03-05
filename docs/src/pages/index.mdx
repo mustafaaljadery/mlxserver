@@ -2,6 +2,37 @@
 
 This Python library is the easist way to begin building on top of Apple's machine learning library, `MLX`.
 
+#### Quick Example:
+
+```python copy
+from mlx_server import MLXServer
+
+server = MLXServer(model="")
+
+response = server.chat(messages=[
+    {
+        'role': 'user',
+        'content': 'Write me a poem about the ocean.'
+    }
+])
+
+print(response['message']['content'])
+```
+
+[Get Started](/getting-started)
+
 ## Goals
 
-## Credits
+This library's goal is to make it as easy as possible to build ML applications on top of the MLX library. The lower the barrier to entry for building in ML, the more great applications will be built.
+
+#### Why `MLX`?
+
+![Picture of a cheetah](/image/cheetah.png)
+
+Because it's the fastest on Apple Silicon and it's going to be the best maintained for a while.
+
+## Credits & contributions
+
+This library was created by [Mustafa Aljadery](https://www.maxaljadery.com/) and [Siddharth Sharma](https://stanford.edu/~sidshr/).
+
+If you would like to contribute to this library please visit the [GitHub Repo](https://github.com/mustafaaljadery/mlx-server/).
