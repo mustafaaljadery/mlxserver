@@ -2,15 +2,13 @@ from mlx_lm.utils import load, generate_step
 import mlx.core as mx
 import re
 
-model, tokenizer = load("mlx-community/Nous-Hermes-2-Mistral-7B-DPO-4bit-MLX")
-
 temperature = 0
 context_length = 1000
 stop_words = ["<|im_start|>", "<|im_end|>", "<s>", "</s>"]
 prompt="write me a poem about the ocean"
 
 
-def generate_steps(the_prompt, the_model):
+def generate_steps(the_prompt, the_model, tokenizer):
     tokens = []
     skip = 0
 
@@ -37,15 +35,13 @@ def generate_steps(the_prompt, the_model):
         skip = len(text)
 
 
-def generate(prompt, model2):
+def generate(prompt, model, tokenizer):
     response = ''
-    for chunk in generate_steps(prompt, model):
-        print(chunk)
+    for chunk in generate_steps(prompt, model, tokenizer):
         response = response + chunk
         if True:
             response = re.sub(r"^/\*+/", "", response)
             response = re.sub(r"^:+", "", response)
             response = response.replace('�', '')
 
-    print(response)
     return response
