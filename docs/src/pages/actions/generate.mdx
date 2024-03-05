@@ -15,7 +15,7 @@ from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
 
-response = server.chat(prompt="")
+response = server.generate(prompt="Write me a poem about the ocean.")
 
 print(response['message']['content'])
 ```
