@@ -10,14 +10,18 @@ curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 
 ## Example
 
+**Python**
+
 ```python copy
 from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
 ```
 
+**Curl**
+
 ```bash copy
-curl -X DELETE 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
+curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 ```
 
 ## Parameters

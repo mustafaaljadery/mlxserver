@@ -4,18 +4,24 @@ Download & store a model from huggingface locally.
 
 ## Usage
 
-```python copy
-server.pull(model="mlx-community/mistral-7B-v0.1")
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 ```
 
 ## Example
+
+**Python**
 
 ```python copy
 from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
 
-server.pull("mlx-community/mistral-7B-v0.1")
+**Curl**
+
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/pull?model=mlx-community/mistral-7B-v0.1'
 ```
 
 ## Parameters

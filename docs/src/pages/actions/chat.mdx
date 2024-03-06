@@ -4,30 +4,40 @@ Chat completion endpoint to chat with a model.
 
 ## Usage
 
-```python copy
-server.chat(messages=[
-    {
-        'role': 'user',
-        'content': 'Write me a poem about the ocean.'
-    }
-])
+```bash copy
+curl -X POST -H "Content-Type: application/json" -d '{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Write me a poem about the ocean."
+        }
+    ],
+    "stream": "true"
+}' http://127.0.0.1:5000/chat
 ```
 
 ## Example
+
+**Python**
 
 ```python
 from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
 
-response = server.chat(messages=[
-    {
-        'role': 'user',
-        'content': 'Write me a poem about the ocean.'
-    }
-])
+**Curl**
 
-print(response['message']['content'])
+```bash copy
+curl -X POST -H "Content-Type: application/json" -d '{
+    "messages": [
+        {
+            "role": "user",
+            "content": "Write me a poem about the ocean."
+        }
+    ],
+    "stream": "true"
+}' http://127.0.0.1:5000/chat
 ```
 
 ## Parameters

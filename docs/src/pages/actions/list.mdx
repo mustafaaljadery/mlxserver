@@ -4,16 +4,22 @@ A list of all the locally downloaded models.
 
 ## Usage
 
-```python copy
-server.list()
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/list'
 ```
 
 ## Example
+
+**Python**
 
 ```python copy
 from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
 
-server.list()
+**curl**
+
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/list'
 ```
