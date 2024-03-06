@@ -4,19 +4,18 @@ This Python library is the easist way to begin building on top of Apple's machin
 
 #### Quick Example:
 
+**Python**
+
 ```python copy
 from mlx_server import MLXServer
 
-server = MLXServer(model="")
+server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
 
-response = server.chat(messages=[
-    {
-        'role': 'user',
-        'content': 'Write me a poem about the ocean.'
-    }
-])
+**Curl**
 
-print(response['message']['content'])
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/generate?prompt=write%20me%20a%20poem%20about%the%20ocean&stream=true'
 ```
 
 [Get Started](/getting-started)

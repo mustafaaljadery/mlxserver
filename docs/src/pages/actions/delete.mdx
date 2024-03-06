@@ -4,8 +4,8 @@ Delete a locally stored models.
 
 ## Usage
 
-```python copy
-server.delete(model="mlx-community/mistral-7B-v0.1")
+```bash copy
+curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 ```
 
 ## Example
@@ -14,8 +14,10 @@ server.delete(model="mlx-community/mistral-7B-v0.1")
 from mlx_server import MLXServer
 
 server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+```
 
-server.delete("mlx-community/mistral-7B-v0.1")
+```bash copy
+curl -X DELETE 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 ```
 
 ## Parameters
