@@ -5,8 +5,6 @@ import re
 temperature = 0
 context_length = 1000
 stop_words = ["<|im_start|>", "<|im_end|>", "<s>", "</s>"]
-prompt="write me a poem about the ocean"
-
 
 def generate_steps(the_prompt, the_model, tokenizer):
     tokens = []
@@ -34,9 +32,9 @@ def generate_steps(the_prompt, the_model, tokenizer):
         yield text[skip:trim]
         skip = len(text)
 
-
 def generate(prompt, model, tokenizer):
     response = ''
+
     for chunk in generate_steps(prompt, model, tokenizer):
         response = response + chunk
         if True:

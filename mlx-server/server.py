@@ -1,11 +1,11 @@
-import requests
-from flask import Flask, request
-from generate import generate
+from flask import Flask, request, Response, stream_with_context
+from generate import generate, generate_steps
 from load import load_model
 from pull import pull
 from list import list
 from show import show
 from delete import delete
+from chat import chat, convert_chat
 
 class MLXServer:
     def __init__(self, model, port = 5000):
@@ -15,17 +15,26 @@ class MLXServer:
         self.app = Flask(__name__)
         self.model = model
         self.port = port 
-
         self.loaded_model, self.tokenizer = load_model(model)
     
         @self.app.route('/generate')
         def generate_endpoint():
             prompt = request.args.get("prompt")
-            return generate(prompt, self.loaded_model, self.tokenizer)
+            stream = request.args.get('stream') == 'true'
+            if stream:
+                return Response(stream_with_context(generate_steps(prompt, self.loaded_model, self.tokenizer)))
+            else:
+                return generate(prompt, self.loaded_model, self.tokenizer)
         
         @self.app.route("/chat")
         def chat_endpoint():
-            return 
+            messages = request.args.get("messages")
+            stream = request.args.get('stream') == 'true'
+            if stream: 
+                prompt = convert_chat(messages)
+                return Response(stream_with_context(generate_steps(prompt, self.loaded_model, self.tokenizer)))
+            else: 
+                return chat(messages, self.loaded_model, self.tokenizer) 
         
         @self.app.route("/list")
         def list_endpiont():
@@ -51,10 +60,3 @@ class MLXServer:
             return show(model)
         
         self.app.run(port=self.port)
-    
-    def generate(self, prompt):
-        #requests.get(f"localhost:{self.port}")
-        return
-    
-    def chat(self, messages):
-        pass
