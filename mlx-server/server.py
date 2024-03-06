@@ -46,7 +46,7 @@ class MLXServer:
 
         @self.app.route("/delete")
         def delete_endpoint():
-            model = request.args.get('model')
+            model = request.args.get("model")
             return delete(model)
 
         @self.app.route("/pull")
