@@ -8,12 +8,12 @@ For documentation and guides, visit [mlxserver.com](https://mlxserver.com)
 
 ## Getting Started
 
-Install `mlx-server` via pip to get started. This installation will install `mlx` as well.
+Install `mlxserver` via pip to get started. This installation will install `mlx` as well.
 
 ### Install using PyPI
 
 ```bash copy
-pip install mlx-server
+pip install mlxserver
 ```
 
 To install from PyPI you must meet the following requirements:
