@@ -1,13 +1,13 @@
 from flask import Flask, request, Response, stream_with_context
-from generate import generate, generate_steps
-from load import load_model
-from pull import pull
-from list import list
-from show import show
-from delete import delete
-from chat import chat, convert_chat
+from .generate import generate, generate_steps
+from .load import load_model
+from .pull import pull
+from .list import list
+from .show import show
+from .delete import delete
+from .chat import chat, convert_chat
 
-class MLXServer:
+class MLXServer():
     def __init__(self, model, port = 5000):
         if model is None:
             raise ValueError("Model cannot be blank")
@@ -26,16 +26,16 @@ class MLXServer:
             else:
                 return generate(prompt, self.loaded_model, self.tokenizer)
         
-        @self.app.route("/chat")
+        @self.app.route("/chat", methods=['POST'])
         def chat_endpoint():
-            messages = request.args.get("messages")
-            stream = request.args.get('stream') == 'true'
+            messages = request.json.get("messages")
+            stream = request.json.get('stream') == 'true'
             if stream: 
                 prompt = convert_chat(messages)
                 return Response(stream_with_context(generate_steps(prompt, self.loaded_model, self.tokenizer)))
             else: 
                 return chat(messages, self.loaded_model, self.tokenizer) 
-        
+
         @self.app.route("/list")
         def list_endpiont():
             return list()

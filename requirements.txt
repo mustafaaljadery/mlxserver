@@ -1,0 +1,4 @@
+mlx
+mlx-lm
+Flask
+requests

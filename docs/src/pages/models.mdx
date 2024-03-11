@@ -6,18 +6,18 @@ To view all of the models, check out `mlx-lm` on [Huggingface](https://huggingfa
 
 Here's a list of some of the most popular models and their usage:
 
-#### Mistral 7B Instruct
+#### Mistral 7B Instruct Nous Research
 
 ```python copy
-from mlx_server import MLXServer
+from mlxserver import MLXServer
 
-server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+server = MLXServer(model="mlx-community/Nous-Hermes-2-Mistral-7B-DPO-4bit-MLX")
 ```
 
 #### Mixtral Instruct
 
 ```python copy
-from mlx_server import MLXServer
+from mlxserver import MLXServer
 
 server = MLXServer(model="mlx-community/Mixtral-8x7B-Instruct-v0.1")
 ```
@@ -25,7 +25,7 @@ server = MLXServer(model="mlx-community/Mixtral-8x7B-Instruct-v0.1")
 #### Gemma
 
 ```python copy
-from mlx_server import MLXServer
+from mlxserver import MLXServer
 
 server = MLXServer(model="mlx-community/quantized-gemma-7b-it")
 ```
@@ -33,8 +33,7 @@ server = MLXServer(model="mlx-community/quantized-gemma-7b-it")
 #### CodeLlama 7B Instruct
 
 ```python copy
-from mlx_server import MLXServer
-
+from mlxserver import MLXServer
 
 server = MLXServer(model="mlx-community/CodeLlama-7b-mlx")
 ```

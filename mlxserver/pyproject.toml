@@ -1,0 +1,26 @@
+[project]
+name = "mlxserver"
+version = "0.1.10"
+description = "Server for the MLX ML library."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [
+    { name = "Mustafa Aljadery", email = "aljadery@usc.edu" },
+    { name = "Siddharth Sharma", email = "sidshr@stanford.edu" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Operating System :: OS Independent",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+]
+requires-python = ">= 3.7"
+dependencies = ["Flask", "mlx", "mlx-lm"]
+
+[project.urls]
+Homepage = "https://www.mlxserver.com/"
+Repository = "https://github.com/mustafaaljadery/mlx-server/"
+
+[build-system]
+requires = ["setuptools>=61.0.0", "wheel", "pybind11>=2.10", "cmake>=3.24"]
+build-backend = "setuptools.build_meta"

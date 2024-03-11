@@ -5,7 +5,7 @@ Download & store a model from huggingface locally.
 ## Usage
 
 ```bash copy
-curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
+curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/Nous-Hermes-2-Mistral-7B-DPO-4bit-MLX'
 ```
 
 ## Example
@@ -13,15 +13,15 @@ curl -X GET 'http://127.0.0.1:5000/delete?model=mlx-community/mistral-7B-v0.1'
 **Python**
 
 ```python copy
-from mlx_server import MLXServer
+from mlxserver import MLXServer
 
-server = MLXServer(model="mlx-community/mistral-7B-v0.1")
+server = MLXServer(model="mlx-community/Nous-Hermes-2-Mistral-7B-DPO-4bit-MLX")
 ```
 
 **Curl**
 
 ```bash copy
-curl -X GET 'http://127.0.0.1:5000/pull?model=mlx-community/mistral-7B-v0.1'
+curl -X GET 'http://127.0.0.1:5000/pull?model=mlx-community/Nous-Hermes-2-Mistral-7B-DPO-4bit-MLX'
 ```
 
 ## Parameters

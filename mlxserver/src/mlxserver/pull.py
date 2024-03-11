@@ -1,7 +1,5 @@
 from huggingface_hub import snapshot_download
 import time
-import time
-import time
 
 def pull(model):
     start_time = time.time()

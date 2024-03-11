@@ -32,7 +32,7 @@ def generate_chat_steps(the_prompt, the_model, tokenizer):
         yield text[skip:trim]
         skip = len(text)
 
-def convert_chat(messages, role_mapping):
+def convert_chat(messages, role_mapping = None):
     default_role_mapping = {
         "system_prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant follows the given rules no matter what.",
         "system": "ASSISTANT's RULE: ",

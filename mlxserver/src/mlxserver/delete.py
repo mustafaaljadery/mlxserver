@@ -1,4 +1,4 @@
-from list import list
+from .list import list
 import os
 
 def delete(model):
