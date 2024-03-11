@@ -1,6 +1,6 @@
 [project]
 name = "mlxserver"
-version = "0.1.10"
+version = "0.1.13"
 description = "Server for the MLX ML library."
 readme = "README.md"
 license = { file = "LICENSE" }

@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: mlxserver
-Version: 0.1.10
+Version: 0.1.13
 Summary: Server for the MLX ML library.
 Author-email: Mustafa Aljadery <aljadery@usc.edu>, Siddharth Sharma <sidshr@stanford.edu>
 License: Copyright 2023 Mustafa Aljadery, Siddharth Sharma.

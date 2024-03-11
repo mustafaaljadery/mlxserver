@@ -12,34 +12,39 @@ def generate_steps(the_prompt, the_model, tokenizer):
 
     for (token, prob), n in zip(generate_step(mx.array(tokenizer.encode(the_prompt)), the_model, temperature),
                                 range(context_length)):
+        try:
+            if token == tokenizer.eos_token_id:
+                break
 
-        if token == tokenizer.eos_token_id:
-            break
+            tokens.append(token.item())
+            text = tokenizer.decode(tokens)
 
-        tokens.append(token.item())
-        text = tokenizer.decode(tokens)
+            trim = None
 
-        trim = None
+            for sw in stop_words:
+                if text[-len(sw):].lower() == sw:
+                    return
+                else:
+                    for i, _ in enumerate(sw, start=1):
+                        if text[-i:].lower() == sw[:i]:
+                            trim = -i
 
-        for sw in stop_words:
-            if text[-len(sw):].lower() == sw:
-                return
-            else:
-                for i, _ in enumerate(sw, start=1):
-                    if text[-i:].lower() == sw[:i]:
-                        trim = -i
-
-        yield text[skip:trim]
-        skip = len(text)
+            yield text[skip:trim]
+            skip = len(text)
+        except:
+            continue
 
 def generate(prompt, model, tokenizer):
     response = ''
 
     for chunk in generate_steps(prompt, model, tokenizer):
-        response = response + chunk
-        if True:
-            response = re.sub(r"^/\*+/", "", response)
-            response = re.sub(r"^:+", "", response)
-            response = response.replace('�', '')
+        try:
+            response = response + chunk
+            if True:
+                response = re.sub(r"^/\*+/", "", response)
+                response = re.sub(r"^:+", "", response)
+                response = response.replace('�', '')
+        except:
+            continue
 
     return response
