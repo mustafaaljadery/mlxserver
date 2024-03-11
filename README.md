@@ -45,3 +45,7 @@ curl -X GET 'http://127.0.0.1:5000/generate?prompt=write%20me%20a%20poem%20about
 ### Note
 
 This library only runs on Apple Metal. The MLX library focuses on Apple Metal acceleration.
+
+## Authors
+
+This library was made by [Mustafa Aljadery](https://www.maxaljadery.com/) & [Siddharth Sharma](https://stanford.edu/~sidshr/).
