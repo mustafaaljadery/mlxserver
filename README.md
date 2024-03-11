@@ -4,7 +4,9 @@ The easiest way to create a server to inference MLX models.
 
 ## Documentation
 
-For documentation and guides, visit [mlxserver.com](https://mlxserver.com)
+For documentation and guides, visit [mlxserver.com](https://mlxserver.com).
+
+View all of the support models [here](https://huggingface.co/mlx-community).
 
 ## Getting Started
 
