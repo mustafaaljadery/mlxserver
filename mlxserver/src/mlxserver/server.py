@@ -1,4 +1,5 @@
 from flask import Flask, request, Response, stream_with_context
+from flask_cors import CORS
 from .generate import generate, generate_steps
 from .load import load_model
 from .pull import pull
@@ -13,6 +14,7 @@ class MLXServer():
             raise ValueError("Model cannot be blank")
 
         self.app = Flask(__name__)
+        CORS(self.app)
         self.model = model
         self.port = port 
         self.loaded_model, self.tokenizer = load_model(model)

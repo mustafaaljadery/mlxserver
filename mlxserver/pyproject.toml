@@ -1,6 +1,6 @@
 [project]
 name = "mlxserver"
-version = "0.1.13"
+version = "0.1.14"
 description = "Server for the MLX ML library."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -15,7 +15,7 @@ classifiers = [
     "Programming Language :: Python :: 3",
 ]
 requires-python = ">= 3.7"
-dependencies = ["Flask", "mlx", "mlx-lm"]
+dependencies = ["Flask", "mlx", "mlx-lm", "flask_cors", "huggingface_hub"]
 
 [project.urls]
 Homepage = "https://www.mlxserver.com/"
