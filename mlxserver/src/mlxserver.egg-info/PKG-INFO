@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: mlxserver
-Version: 0.1.13
+Version: 0.1.14
 Summary: Server for the MLX ML library.
 Author-email: Mustafa Aljadery <aljadery@usc.edu>, Siddharth Sharma <sidshr@stanford.edu>
 License: Copyright 2023 Mustafa Aljadery, Siddharth Sharma.
@@ -22,5 +22,7 @@ License-File: LICENSE
 Requires-Dist: Flask
 Requires-Dist: mlx
 Requires-Dist: mlx-lm
+Requires-Dist: flask_cors
+Requires-Dist: huggingface_hub
 
 # MLX Server
