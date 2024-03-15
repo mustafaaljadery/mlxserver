@@ -44,4 +44,6 @@ export default {
       </span>
     ),
   },
+  docsRepositoryBase:
+    'https://github.com/mustafaaljadery/mlx-server/blob/main/docs'
 };
