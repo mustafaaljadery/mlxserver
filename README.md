@@ -22,7 +22,7 @@ To install from PyPI you must meet the following requirements:
 
 - Using an M series chip (Apple silicon)
 - Using a native Python >= 3.8
-- macOS >= 13.3
+- macOS >= 13.5
 
 ### Usage
 

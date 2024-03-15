@@ -2,3 +2,4 @@ mlx
 mlx-lm
 Flask
 requests
+flask_cors
